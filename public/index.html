@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+
+    <button id="fetchBtn">fetch me</button>
+    <span id="responseText"></span>
+
+    <script>
+        fetchBtn.addEventListener('click', async () => {
+  const response = await fetch('/.netlify/functions/getNumber')
+		.then(response => response.json()
+	)
+
+  responseText.innerText = responseText.innerText = JSON.stringify(response)
+})
+    </script>
+</body>
+</html>
